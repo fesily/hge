@@ -70,14 +70,14 @@
 */
 
 // FIXME: Won't compile in 64-bit mode due to handles (4 bytes) holding a pointer (8 bytes)
-using HTEXTURE = size_t;
-using HTARGET = size_t;
-using HEFFECT = size_t;
-using HMUSIC = size_t;
-using HSTREAM = size_t;
-using HCHANNEL = size_t;
+using HTEXTURE = DWORD;
+using HTARGET = DWORD;
+using HEFFECT = DWORD;
+using HMUSIC = DWORD;
+using HSTREAM = DWORD;
+using HCHANNEL = DWORD;
 #if HGE_DIRECTX_VER >= 9
-using HSHADER = size_t;
+using HSHADER = DWORD;
 #endif
 
 using hgeBlendMode = uint32_t;

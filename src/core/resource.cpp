@@ -11,7 +11,8 @@
 
 #define NOCRYPT
 //#define NOUNCRYPT
-#include <unzip.h>
+#include <minizip\unzip.h>
+
 
 
 bool HGE_CALL HGE_Impl::Resource_AttachPack(const char* filename, const char* password) {

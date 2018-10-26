@@ -257,8 +257,15 @@ void hgeParticleSystem::Render() {
         else {
             info.sprite->SetColor(par->colColor.GetHWColor());
         }
+		float rot = par->fSpin*par->fAge;
+		//ÌØÊâ´¦Àí ·øÉä
+		if (info.fSpinStart - 0.123456f < 0.000001f && 0.123456f - info.fSpinStart < 0.000001f)
+		{
+			hgeVector hge_vector = par->vecLocation - location_;
+			rot = hge_vector.Angle()+M_PI_2;
+		}
         info.sprite->RenderEx(par->vecLocation.x * scale_ + tx_, par->vecLocation.y * scale_ + ty_,
-                              par->fSpin * par->fAge, par->fSize * scale_);
+                              rot, par->fSize * scale_);
         par++;
     }
 

@@ -9,7 +9,7 @@
 
 #include "hge_impl.h"
 
-
+#pragma comment(lib,"Winmm.lib")
 #define LOWORDINT(n) ((int)((signed short)(LOWORD(n))))
 #define HIWORDINT(n) ((int)((signed short)(HIWORD(n))))
 

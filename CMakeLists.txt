@@ -4,12 +4,6 @@ project( HGE )
 cmake_minimum_required( VERSION 2.8 )
 
 ##----------------------------------------
-## Edit this to match your configuration
-##----------------------------------------
-
-SET( DIRECTX_SDK_DIR "E:/Dev/DX9SDK" )
-
-##----------------------------------------
 ## End of manual configuration section
 ## try to minimize tampering with code below unless you know how CMake works
 ##----------------------------------------
@@ -31,30 +25,28 @@ SET( CMAKE_INCLUDE_CURRENT_DIR ON )
 
 
 #---------------------------------
-add_subdirectory( src/zlib-1.2.5 )
-add_subdirectory( src/libPNG )
 
 #--- HGE core library and helpers ---
 add_subdirectory( src/helpers )
 add_subdirectory( src/core )
 
 #--- HGE TOOLS - comment out of not needed ---
-add_subdirectory( src/fontconv )
-add_subdirectory( src/fonted )
-add_subdirectory( src/particleed )
-add_subdirectory( src/pngopt )
-add_subdirectory( src/texasm )
+#add_subdirectory( src/fontconv )
+#add_subdirectory( src/fonted )
+#add_subdirectory( src/particleed )
+#add_subdirectory( src/pngopt )
+#add_subdirectory( src/texasm )
 
 #--- HGE examples ---
-add_subdirectory( tutorials/tutorial01 )
-add_subdirectory( tutorials/tutorial02 )
-add_subdirectory( tutorials/tutorial03 )
-add_subdirectory( tutorials/tutorial04 )
-add_subdirectory( tutorials/tutorial05 )
-add_subdirectory( tutorials/tutorial06 )
-add_subdirectory( tutorials/tutorial07 )
-add_subdirectory( tutorials/tutorial08 )
+#add_subdirectory( tutorials/tutorial01 )
+#add_subdirectory( tutorials/tutorial02 )
+#add_subdirectory( tutorials/tutorial03 )
+#add_subdirectory( tutorials/tutorial04 )
+#add_subdirectory( tutorials/tutorial05 )
+#add_subdirectory( tutorials/tutorial06 )
+#add_subdirectory( tutorials/tutorial07 )
+#add_subdirectory( tutorials/tutorial08 )
 
 #if( ${HGE_DIRECTX_VER} MATCHES "9" )
-    add_subdirectory( tutorials/tutorial05_shaders )
+#    add_subdirectory( tutorials/tutorial05_shaders )
 #endif()
