@@ -37,6 +37,14 @@ include_directories( ${HGE_SOURCE_DIR}/include )
 #------ link directories listed ------
 link_directories( ${HGE_SOURCE_DIR}/linklib )
 link_libraries( hgehelpers )
+if(HGE_DIRECTX_VER STREQUAL "9")
+    link_libraries(d3d9)
+    link_libraries(debug d3dx9d )
+    link_libraries(optimized d3dx9 )
+else()
+    message(WARNING "unkonw directx version,please change linked directx lib") 
+endif()
+
 
 #------ precompiled headers support (not done for now) ------
 ## if (MSVC)
