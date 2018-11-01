@@ -242,6 +242,7 @@ public:
     bool hide_mouse_;
     bool dont_suspend_;
     HWND hwnd_parent_;
+    bool is_res_encrypt_;
 
 #ifdef HGE_SPLASH_ENABLE
     bool splash_screen_enabled_;

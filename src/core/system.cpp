@@ -473,6 +473,8 @@ void HGE_CALL HGE_Impl::System_SetStateBool(const hgeBoolState state, const bool
         splash_screen_enabled_ = value;
         break;
 #endif
+    case HGE_RESENCRYPT:
+        is_res_encrypt_ = value; break;
     }
 }
 
@@ -650,7 +652,8 @@ bool HGE_CALL HGE_Impl::System_GetStateBool(const hgeBoolState state) {
         return dont_suspend_;
     case HGE_HIDEMOUSE:
         return hide_mouse_;
-
+    case HGE_RESENCRYPT:	
+        return is_res_encrypt_;
 #ifdef HGE_SPLASH_ENABLE
     case HGE_SHOWSPLASH:
         return splash_screen_enabled_;

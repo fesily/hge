@@ -12,7 +12,7 @@
 #define NOCRYPT
 //#define NOUNCRYPT
 #include <minizip\unzip.h>
-
+#include "ResDecrypt.h"
 
 
 bool HGE_CALL HGE_Impl::Resource_AttachPack(const char* filename, const char* password) {
@@ -189,6 +189,8 @@ _fromfile:
         post_error(sz_name);
         return nullptr;
     }
+    // 资源解密
+    if (is_res_encrypt_) DecryptData((BYTE*)ptr, file_info.uncompressed_size);
 
     CloseHandle(h_f);
     if (size) {
